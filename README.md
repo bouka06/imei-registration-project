@@ -39,7 +39,9 @@ It’s a desktop GUI application used to register devices imported from abroad b
   ()
 - Display authorized devices in a table
 (https://github.com/bouka06/imei-registration-project/blob/5f9b1b8ef951d392a5f4996daacd00c0deb62496/Screenshot%202025-12-27%20185012.png)
-(https://github.com/bouka06/imei-registration-project/blob/5f9b1b8ef951d392a5f4996daacd00c0deb62496/Screenshot%202025-12-27%20185650.png)
+
+
+([https://github.com/bouka06/imei-registration-project/blob/5f9b1b8ef951d392a5f4996daacd00c0deb62496/Screenshot%202025-12-27%20185650.png](https://github.com/bouka06/imei-registration-project/blob/deb3fd08808e7fdd0e02497518de4e5122920689/Screenshot%202025-12-27%20190502.png))
 - Sort authorized devices by:
   - Brand
   - Year
@@ -58,6 +60,7 @@ It’s a desktop GUI application used to register devices imported from abroad b
 - PyQt5
 - Qt Designer
 - pickle (for binary storage)
+
 
 
 
