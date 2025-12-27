@@ -61,6 +61,27 @@ It’s a desktop GUI application used to register devices imported from abroad b
 - Qt Designer
 - pickle (for binary storage)
 
+  ---
+
+## How to run
+
+1) Install **Python** on your computer.
+2) Download (or clone) this project.
+3) Make sure `imei-project.py` and `imei.ui` are in the **same folder**.
+4) Open **Command Prompt** (Windows) or **Terminal** (Mac/Linux) in that folder.
+5) Install PyQt5 by typing:
+   - pip install PyQt5
+6) Start the program by typing:
+   - python imei-project.py
+
+### Notes
+- Run the program from the same folder as `imei.ui` so the interface loads correctly.
+- The app will create/update:
+  - `IMEI_V.dat` (authorized devices)
+  - `blocage.txt` (blocked devices)
+
+
+
 
 
 
