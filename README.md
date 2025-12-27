@@ -28,6 +28,7 @@ It’s a desktop GUI application used to register devices imported from abroad b
      - (https://github.com/bouka06/imei-registration-project/blob/18387ce5ba634e4ee44242290969982828558a23/Screenshot%202025-12-27%20174359.png)
      - Otherwise → the device is **authorized** and saved to `IMEI_V.dat` (binary file using `pickle`)
      - (https://github.com/bouka06/imei-registration-project/blob/0df0280b9407e80bde043e139200c64815d3c82f/Screenshot%202025-12-27%20171247.png)
+     - (https://github.com/bouka06/imei-registration-project/blob/5f9b1b8ef951d392a5f4996daacd00c0deb62496/Screenshot%202025-12-27%20185650.png)
 
 ## Features
 - Add new devices with full validation
@@ -56,4 +57,5 @@ It’s a desktop GUI application used to register devices imported from abroad b
 - PyQt5
 - Qt Designer
 - pickle (for binary storage)
+
 
