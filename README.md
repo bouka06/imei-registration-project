@@ -1,33 +1,51 @@
 # IMEI Registration System (Python + Qt Designer / PyQt5)
 
-This project is built with **Python** and **Qt Designer (PyQt5)** (learned during my secondary education). It provides a desktop GUI to register devices imported from abroad by saving the **IMEI** and its details, while blocking invalid IMEIs. :contentReference[oaicite:0]{index=0}
+This project is built with **Python** and **Qt Designer (PyQt5)** (learned during my secondary education).  
+It’s a desktop GUI application used to register devices imported from abroad by saving the **IMEI** and its details, while blocking invalid IMEIs.
 
 ## How it works
-1. The user enters: **IMEI**, **Passport**, **Year**, **Brand**, and selects **4G/5G**. :contentReference[oaicite:1]{index=1}  
-2. Input checks (with error popups):
-   - **IMEI** must be **15 digits** (numbers only).  
-     📸 *Screenshot: IMEI error* :contentReference[oaicite:2]{index=2}
-   - **Passport** must be **8 characters** and **alphanumeric** (letters/digits only).  
-     📸 *Screenshot: Passport error* :contentReference[oaicite:3]{index=3} :contentReference[oaicite:4]{index=4}
-   - **Year** must not be empty. :contentReference[oaicite:5]{index=5}
-   - **Brand** must be selected (not "Choose a brand"). :contentReference[oaicite:6]{index=6}
-3. The IMEI is validated using the **Luhn algorithm**. :contentReference[oaicite:7]{index=7}  
-   - If **Luhn fails** → device is **blocked** and appended to **`blocage.txt`**. :contentReference[oaicite:8]{index=8}  
-   - If **Luhn passes**:
-     - If the IMEI already exists → error ("already registered"). :contentReference[oaicite:9]{index=9}
-     - Otherwise → device is **authorized** and saved to **`IMEI_V.dat`** (binary, using `pickle`). :contentReference[oaicite:10]{index=10}
+1. The user enters the device information:
+   - IMEI
+   - Passport number
+   - Year
+   - Brand
+   - Category (4G / 5G)
+
+2. Validation rules (error messages appear in the GUI):
+   - **IMEI must be exactly 15 digits** (numbers only)  
+     📸 *Screenshot: IMEI 15 digits error*
+   - **Passport must be exactly 8 characters** and **alphanumeric** (letters + digits only)  
+     📸 *Screenshot: Passport invalid error*
+   - **Year must not be empty**  
+     📸 *Screenshot: Year missing error*
+   - **Brand must be selected** (not “Choose a brand”)  
+     📸 *Screenshot: Brand selection error*
+
+3. After basic checks, the program verifies the IMEI using the **Luhn algorithm**:
+   - If the IMEI **fails Luhn** → the device is **blocked** and appended to `blocage.txt`
+   - If the IMEI **passes Luhn**:
+     - If the IMEI already exists → an error message appears (“already registered”)
+     - Otherwise → the device is **authorized** and saved to `IMEI_V.dat` (binary file using `pickle`)
 
 ## Features
-- Add devices with validation + Luhn check :contentReference[oaicite:11]{index=11}  
-- View **blocked** devices (from `blocage.txt`) :contentReference[oaicite:12]{index=12}  
-- View **authorized** devices (from `IMEI_V.dat`) and sort them by:
-  - **Brand**
-  - **Year**
-  - **Brand then Year** (bubble sort) :contentReference[oaicite:13]{index=13} :contentReference[oaicite:14]{index=14}
+- Add new devices with full validation
+- Block invalid IMEIs and store them in a text file (`blocage.txt`)
+- Save authorized devices in a binary database (`IMEI_V.dat`)
+- Display authorized devices in a table
+- Sort authorized devices by:
+  - Brand
+  - Year
+  - Brand then Year
+- Display blocked devices from `blocage.txt`
 
-## Files used
-- `IMEI_V.dat` → authorized devices database (binary / pickle) :contentReference[oaicite:15]{index=15}  
-- `blocage.txt` → blocked devices log (text) :contentReference[oaicite:16]{index=16}
-- `imei.ui` → GUI layout designed with Qt Designer :contentReference[oaicite:17]{index=17}
+## Files
+- `imei.ui` : GUI design (Qt Designer)
+- `imei-project.py` : Python/PyQt5 application logic
+- `IMEI_V.dat` : Authorized devices database (binary / pickle)
+- `blocage.txt` : Blocked devices log (text)
 
-
+## Tech Stack
+- Python
+- PyQt5
+- Qt Designer
+- pickle (for binary storage)
